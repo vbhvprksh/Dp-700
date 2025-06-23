@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLQueryset",
+    "displayName": "event_stock_data_queryset",
+    "description": "event_stock_data_queryset"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "936e697c-53fb-a422-4d0b-95e80a812dbf"
+  }
+}

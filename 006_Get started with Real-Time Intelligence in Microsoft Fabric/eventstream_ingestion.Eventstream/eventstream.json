@@ -1,0 +1,164 @@
+{
+  "sources": [
+    {
+      "id": "fb36fb22-a293-48af-8981-d1599cd45ddf",
+      "name": "StockMarket",
+      "type": "SampleData",
+      "properties": {
+        "type": "StockMarket"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "id": "146df38b-31b2-4f3b-a54f-475e6d6824e7",
+      "name": "fe2d8715-35e1-4d1b-b658-f09ab48a2c6d",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "34ee7c2f-6cbd-a934-409b-20becf6a382e",
+        "tableName": "StockTable",
+        "connectionName": "eventstream_ingestion_event_stock_data-S",
+        "mappingRuleName": "StockTable_mapping"
+      },
+      "inputNodes": [
+        {
+          "name": "eventstream_ingestion-stream"
+        }
+      ]
+    },
+    {
+      "id": "8977cd63-4848-4c17-9305-9ef9f92edf86",
+      "name": "Eventhouse",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "34ee7c2f-6cbd-a934-409b-20becf6a382e",
+        "tableName": "",
+        "connectionName": null,
+        "mappingRuleName": null
+      },
+      "inputNodes": [
+        {
+          "name": "eventstream_ingestion-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "eventstream_ingestion-stream",
+          "schema": {
+            "columns": [
+              {
+                "name": "time",
+                "type": "DateTime",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "symbol",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "sector",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "securityType",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "bidPrice",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "bidSize",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "askPrice",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "askSize",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "lastUpdated",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "lastSalePrice",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "lastSaleSize",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "lastSaleTime",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "volume",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "marketPercent",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "seq",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "be313670-daa7-416f-905f-cad688f85d5d",
+      "name": "eventstream_ingestion-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "StockMarket"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.0"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLQueryset",
+    "displayName": "realtime_lab",
+    "description": "realtime_lab"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4aa34176-f508-aeb0-45d7-9b1ff7a4f3e2"
+  }
+}

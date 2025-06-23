@@ -1,0 +1,148 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "bf1589cc-2ffa-4e96-bfd9-f6d4e98d3535",
+          "workspaceId": "1c761afd-85aa-44d7-a7d9-95bf3b9ff1bf",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Dataflow1",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "formatSettings": {
+              "type": "DelimitedTextReadSettings"
+            },
+            "storeSettings": {
+              "type": "HttpReadSettings",
+              "requestMethod": "GET"
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "HttpServerLocation"
+                },
+                "columnDelimiter": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "60aed0ca-5614-4d27-aafc-4d7ff85193fc"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DelimitedTextSink",
+            "formatSettings": {
+              "type": "DelimitedTextWriteSettings",
+              "fileExtension": ".txt"
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "pipeline_data",
+                  "fileName": "sales.csv"
+                },
+                "columnDelimiter": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Data_ingestion_process",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "314a0920-aeea-abe0-41c2-d9662b51309f",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "dependsOn": [
+          {
+            "activity": "Dataflow1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "8c30a38e-51bd-a6bf-4f0a-131b9b1b4b9e",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "table_name": {
+              "value": "sales",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Notebook1",
+        "dependsOn": [
+          {
+            "activity": "Copy data1",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
