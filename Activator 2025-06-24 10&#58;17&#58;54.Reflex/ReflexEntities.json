@@ -1,0 +1,38 @@
+[
+  {
+    "uniqueIdentifier": "42824b08-6c80-46d2-a3ae-06d49b6d05a7",
+    "payload": {
+      "name": "EventStream",
+      "metadata": {
+        "eventstreamArtifactId": "d3d08ea0-7a3f-455a-9d44-4331ea524487"
+      }
+    },
+    "type": "eventstreamSource-v1"
+  },
+  {
+    "uniqueIdentifier": "177c1822-9554-4789-bf3d-4da3785ae0fc",
+    "payload": {
+      "name": "eventstream_ingestion-stream event",
+      "definition": {
+        "type": "Event",
+        "instance": "{\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"SourceEventStep\",\"id\":\"00300e95-80da-410a-8140-05cd026aa8c6\",\"rows\":[{\"name\":\"SourceSelector\",\"kind\":\"SourceReference\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"42824b08-6c80-46d2-a3ae-06d49b6d05a7\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "a9012151-19e4-4ccf-8e4c-08cb875ab25e",
+    "payload": {
+      "name": "eventstream_ingestion-stream event alert",
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"steps\":[{\"id\":\"336bfc35-cced-41e4-81df-4ea5ff4752ce\",\"name\":\"FieldsDefaultsStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"177c1822-9554-4789-bf3d-4da3785ae0fc\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"}]},{\"id\":\"12075677-e075-49f1-a5a4-2ec28d1c2be7\",\"name\":\"EventDetectStep\",\"rows\":[{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"},{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsGreaterThan\"},{\"name\":\"threshold\",\"type\":\"number\",\"value\":0}],\"kind\":\"NumberValueCondition\",\"name\":\"NumberValueCondition\"}]},{\"id\":\"6481612e-2874-4fec-96a8-4bb02836b561\",\"name\":\"ActStep\",\"rows\":[{\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"en-us\"},{\"name\":\"sentTo\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"vbhvprksh1@outlook.com\"}]},{\"name\":\"copyTo\",\"type\":\"array\",\"values\":[]},{\"name\":\"bCCTo\",\"type\":\"array\",\"values\":[]},{\"name\":\"subject\",\"type\":\"array\",\"values\":[{\"name\":\"string\",\"type\":\"string\",\"value\":\"EventStream does not work \"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The condition for 'eventstream_ingestion-stream event alert' has been met\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}],\"kind\":\"EmailMessage\",\"name\":\"EmailBinding\"}]}],\"templateId\":\"EventTrigger\",\"templateVersion\":\"1.2\"}",
+        "settings": {
+          "shouldRun": true,
+          "shouldApplyRuleOnUpdate": true
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]

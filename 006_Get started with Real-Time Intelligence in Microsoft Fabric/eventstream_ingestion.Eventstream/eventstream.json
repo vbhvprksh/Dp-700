@@ -29,6 +29,26 @@
       ]
     },
     {
+      "id": "42824b08-6c80-46d2-a3ae-06d49b6d05a7",
+      "name": "QSiNj60NGx2XyQjfmg0zMV-a7d66b12-cbcb-4f07-9e28-79c8d5c48812",
+      "type": "Activator",
+      "properties": {
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "d5c48812-79c8-9e28-4f07-cbcba7d66b12",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "eventstream_ingestion-stream"
+        }
+      ]
+    },
+    {
       "id": "8977cd63-4848-4c17-9305-9ef9f92edf86",
       "name": "Eventhouse",
       "type": "Eventhouse",
