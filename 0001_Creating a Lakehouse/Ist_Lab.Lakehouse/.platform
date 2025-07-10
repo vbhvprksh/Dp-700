@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Lakehouse",
-    "displayName": "Lakehouse_Spark"
+    "displayName": "Ist_Lab"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "44ce3119-ff52-9976-4f76-ed63d1f39039"
+    "logicalId": "64689abe-a7ad-a61f-4407-cf2b7ee53c92"
   }
 }

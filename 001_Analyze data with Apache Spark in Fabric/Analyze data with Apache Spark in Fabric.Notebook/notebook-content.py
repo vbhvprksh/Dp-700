@@ -9,13 +9,17 @@
 # META   "dependencies": {
 # META     "lakehouse": {
 # META       "default_lakehouse": "d1f39039-ed63-4f76-9976-ff5244ce3119",
-# META       "default_lakehouse_name": "Apache_Spark",
+# META       "default_lakehouse_name": "Lakehouse_Spark",
 # META       "default_lakehouse_workspace_id": "1c761afd-85aa-44d7-a7d9-95bf3b9ff1bf",
 # META       "known_lakehouses": [
 # META         {
 # META           "id": "d1f39039-ed63-4f76-9976-ff5244ce3119"
 # META         }
 # META       ]
+# META     },
+# META     "environment": {
+# META       "environmentId": "ddf24e5d-0c77-8377-4728-8ed16e683af0",
+# META       "workspaceId": "00000000-0000-0000-0000-000000000000"
 # META     }
 # META   }
 # META }
