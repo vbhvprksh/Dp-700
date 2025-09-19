@@ -12,6 +12,6 @@ CREATE TABLE [dbo].[FactSalesOrder] (
 GO
 ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT UQ_73057611_d3d8_4f5f_964f_6fefa3104dab unique NONCLUSTERED ([ProductKey]);
 GO
-ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT UQ_75ef437f_ebd3_42a6_b175_5754419d3be9 unique NONCLUSTERED ([CustomerKey]);
-GO
 ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT UQ_7b939bc0_2aba_4645_9b06_3d609826bf87 unique NONCLUSTERED ([SalesOrderKey]);
+GO
+ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT FK_439e5352_56e0_44d9_aedb_3cd7a2c0de1e FOREIGN KEY ([CustomerKey]) REFERENCES [dbo].[DimCustomer]([CustomerKey]);

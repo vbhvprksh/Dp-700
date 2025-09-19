@@ -1,12 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Environment",
-    "displayName": "new_env2",
-    "description": "Environment"
+    "type": "Eventstream",
+    "displayName": "new_event_stream"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "ddf24e5d-0c77-8377-4728-8ed16e683af0"
+    "logicalId": "46238b3a-104f-9d0f-40c0-01c1b5d1d3f4"
   }
 }

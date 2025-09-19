@@ -632,10 +632,10 @@
     ],
     "relationships": [
       {
-        "name": "2c5eeeef807e422742f93b96923d6878",
-        "fromTable": "DimCustomer",
+        "name": "a39cff0b0b3f6b4c4859baef305175c5",
+        "fromTable": "FactSalesOrder",
         "fromColumn": "CustomerKey",
-        "toTable": "FactSalesOrder",
+        "toTable": "DimCustomer",
         "toColumn": "CustomerKey"
       },
       {

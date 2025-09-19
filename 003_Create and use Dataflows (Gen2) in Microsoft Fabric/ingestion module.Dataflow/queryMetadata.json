@@ -4,6 +4,29 @@
   "name": "ingestion module",
   "queryGroups": [],
   "documentLocale": "en-US",
-  "queriesMetadata": {},
-  "connections": []
+  "queriesMetadata": {
+    "orders": {
+      "queryId": "34b8ea4d-7538-41f1-ae24-80a108dd67d6",
+      "queryName": "orders",
+      "loadEnabled": false
+    },
+    "orders_DataDestination": {
+      "queryId": "e759f8ef-0ad1-466a-bf34-46c2b1282195",
+      "queryName": "orders_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"57db4d74-82b4-4daf-b832-1e277d43586a\",\"DatasourceId\":\"81436a25-90db-41f6-a411-04329189f221\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"57db4d74-82b4-4daf-b832-1e277d43586a\",\"DatasourceId\":\"85aab3e4-84f9-4c84-9185-a26fc252ffd7\"}"
+    }
+  ]
 }

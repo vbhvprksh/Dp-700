@@ -14,4 +14,4 @@ CREATE TABLE [dbo].[DimCustomer] (
 
 
 GO
-ALTER TABLE [dbo].[DimCustomer] ADD CONSTRAINT FK_18c9cbfd_ab4b_4c4e_8282_65d4ff4856e5 FOREIGN KEY ([CustomerKey]) REFERENCES [dbo].[FactSalesOrder]([CustomerKey]);
+ALTER TABLE [dbo].[DimCustomer] ADD CONSTRAINT UQ_0a6b23b1_ad3a_427c_b1bd_cf0931f8b9ce unique NONCLUSTERED ([CustomerKey]);
