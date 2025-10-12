@@ -632,18 +632,18 @@
     ],
     "relationships": [
       {
+        "name": "9757d1cfb60d8b5b2de2e995cd097223",
+        "fromTable": "FactSalesOrder",
+        "fromColumn": "ProductKey",
+        "toTable": "DimProduct",
+        "toColumn": "ProductKey"
+      },
+      {
         "name": "a39cff0b0b3f6b4c4859baef305175c5",
         "fromTable": "FactSalesOrder",
         "fromColumn": "CustomerKey",
         "toTable": "DimCustomer",
         "toColumn": "CustomerKey"
-      },
-      {
-        "name": "a4b1e7a145d7ab0f2ccde9d4c6cd7314",
-        "fromTable": "DimProduct",
-        "fromColumn": "ProductKey",
-        "toTable": "FactSalesOrder",
-        "toColumn": "ProductKey"
       },
       {
         "name": "de77fad31913b5b3ff330e9ed5c1357f",

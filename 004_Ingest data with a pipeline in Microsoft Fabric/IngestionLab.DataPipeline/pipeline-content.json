@@ -17,7 +17,14 @@
           "secureOutput": false
         },
         "name": "Dataflow1",
-        "dependsOn": []
+        "dependsOn": [
+          {
+            "activity": "Copy data1",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
       },
       {
         "type": "Copy",
@@ -105,14 +112,7 @@
           "secureOutput": false
         },
         "name": "Copy data1",
-        "dependsOn": [
-          {
-            "activity": "Dataflow1",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          }
-        ]
+        "dependsOn": []
       },
       {
         "type": "TridentNotebook",
@@ -136,7 +136,7 @@
         "name": "Notebook1",
         "dependsOn": [
           {
-            "activity": "Copy data1",
+            "activity": "Dataflow1",
             "dependencyConditions": [
               "Completed"
             ]

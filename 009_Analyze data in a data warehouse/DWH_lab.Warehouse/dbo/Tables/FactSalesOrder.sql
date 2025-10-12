@@ -10,8 +10,8 @@ CREATE TABLE [dbo].[FactSalesOrder] (
 
 
 GO
-ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT UQ_73057611_d3d8_4f5f_964f_6fefa3104dab unique NONCLUSTERED ([ProductKey]);
-GO
 ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT UQ_7b939bc0_2aba_4645_9b06_3d609826bf87 unique NONCLUSTERED ([SalesOrderKey]);
 GO
 ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT FK_439e5352_56e0_44d9_aedb_3cd7a2c0de1e FOREIGN KEY ([CustomerKey]) REFERENCES [dbo].[DimCustomer]([CustomerKey]);
+GO
+ALTER TABLE [dbo].[FactSalesOrder] ADD CONSTRAINT FK_be604ca0_3d98_4ce6_80d3_4697fcbd43ca FOREIGN KEY ([ProductKey]) REFERENCES [dbo].[DimProduct]([ProductKey]);

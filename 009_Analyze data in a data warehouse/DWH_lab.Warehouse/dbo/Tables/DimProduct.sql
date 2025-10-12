@@ -9,4 +9,4 @@ CREATE TABLE [dbo].[DimProduct] (
 
 
 GO
-ALTER TABLE [dbo].[DimProduct] ADD CONSTRAINT FK_aa3ffa91_392d_4ed2_93bc_37c33881bbf4 FOREIGN KEY ([ProductKey]) REFERENCES [dbo].[FactSalesOrder]([ProductKey]);
+ALTER TABLE [dbo].[DimProduct] ADD CONSTRAINT UQ_38a58cf7_fd05_43fb_9cbf_8a087e423761 unique NONCLUSTERED ([ProductKey]);
