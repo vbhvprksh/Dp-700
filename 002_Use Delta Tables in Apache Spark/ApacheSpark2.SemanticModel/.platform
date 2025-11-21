@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "ApacheSpark2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "47f42d98-0286-9674-4bcd-07b0be370281"
+  }
+}

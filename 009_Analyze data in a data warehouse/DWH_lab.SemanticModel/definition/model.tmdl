@@ -1,0 +1,21 @@
+model 3af88b06-f95e-46e2-b984-81014b66e1c0
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["exec_requests_history","long_running_queries","frequently_run_queries","exec_sessions_history","vSalesByRegion","DimProduct","DimCustomer","DimDate","FactSalesOrder"]
+
+annotation SourceLineageTagType = DatabaseFullyQualifiedName
+
+ref table vSalesByRegion
+ref table DimProduct
+ref table DimCustomer
+ref table DimDate
+ref table FactSalesOrder
+

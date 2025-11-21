@@ -1,0 +1,8 @@
+relationship 74ee10c8-7202-5ae1-2e81-0a4938e1f0d4
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: products.ProductName
+	toColumn: sales.Item
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+

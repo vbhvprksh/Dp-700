@@ -9,9 +9,9 @@ shared orders = let
 in
   #"Filtered rows";
 shared orders_DataDestination = let
-  Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
+  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "1c761afd-85aa-44d7-a7d9-95bf3b9ff1bf"]}[Data],
-  Navigation_2 = Navigation_1{[lakehouseId = "bb851c90-4941-42bc-b339-485d4e3ab1e4"]}[Data],
+  Navigation_2 = Navigation_1{[lakehouseId = "2b51309f-d966-41c2-abe0-aeea314a0920"]}[Data],
   TableNavigation = Navigation_2{[Id = "orders", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;

@@ -1,0 +1,74 @@
+{
+  "schema_version": 66,
+  "tiles": [
+    {
+      "id": "6ea14483-a1e1-4676-a14e-099fd3a1da22",
+      "title": "newtilw",
+      "visualType": "table",
+      "pageId": "a7edaeb0-d373-4894-9d5d-3c1e3efb80ec",
+      "layout": {
+        "width": 9,
+        "height": 7,
+        "x": 0,
+        "y": 0
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "30e6aaad-7cb7-49a4-beb6-b4a3d2e3b16a"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "00f00439-3fe5-498d-9ece-bf5847ba5880",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "42102179-add9-4f43-b82f-9a905021caa6",
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "34ee7c2f-6cbd-a934-409b-20becf6a382e",
+      "name": "event_stock_data",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "a7edaeb0-d373-4894-9d5d-3c1e3efb80ec"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "42102179-add9-4f43-b82f-9a905021caa6"
+      },
+      "text": "\n StockTable\n | where [\"time\"] > ago(5m)\n | summarize avgPrice = avg(todecimal(bidPrice)) by symbol\n | project symbol, avgPrice",
+      "id": "30e6aaad-7cb7-49a4-beb6-b4a3d2e3b16a",
+      "usedVariables": []
+    }
+  ]
+}

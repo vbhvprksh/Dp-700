@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLQueryset",
+    "displayName": "YelllowTaxi",
+    "description": "YelllowTaxi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a468394f-017e-9bc8-4f18-fcc14b0696f7"
+  }
+}

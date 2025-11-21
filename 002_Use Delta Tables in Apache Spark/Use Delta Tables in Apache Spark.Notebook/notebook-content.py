@@ -65,6 +65,18 @@ df.write.format("delta").saveAsTable("external_products", path="abfss://1c761afd
 
 # CELL ********************
 
+df = spark.sql("SELECT * FROM ApacheSpark2.external_products LIMIT 1000")
+display(df)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 # MAGIC %%sql
 # MAGIC DESCRIBE FORMATTED managed_products;
 

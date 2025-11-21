@@ -1,14 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
   "version": "4.0",
   "datasetReference": {
-    "byConnection": {
-      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/DP-700;initial catalog=Ist_Lab;integrated security=ClaimsToken",
-      "pbiServiceModelId": null,
-      "pbiModelVirtualServerName": "sobe_wowvirtualserver",
-      "pbiModelDatabaseName": "1a5353ea-9646-4f1b-905a-beea4d35917f",
-      "name": "EntityDataSource",
-      "connectionType": "pbiServiceXmlaStyleLive"
+    "byPath": {
+      "path": "../Ist_Lab.SemanticModel"
     }
   }
 }

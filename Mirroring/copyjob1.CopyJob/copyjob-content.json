@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "source": {
+      "type": "AzureSqlTable",
+      "connectionSettings": {
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+          "database": "sqldb"
+        },
+        "externalReferences": {
+          "connection": "d11e49bf-33d4-4d41-96b9-480ae0e96ac7"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "c710529b-b729-4d5e-8f1a-9a7babc6fdcc",
+          "artifactId": "8b4ae9a3-11a5-44c7-8e7b-42dd602a4960",
+          "rootFolder": "Tables"
+        },
+        "externalReferences": {
+          "connection": "85aab3e4-84f9-4c84-9185-a26fc252ffd7"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "647f0545-f349-4ee1-b4f0-4649e30af0ff",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "Customer"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental",
+            "columns": [
+              {
+                "name": "CustomerID",
+                "type": "Int32",
+                "physicalType": "int"
+              }
+            ]
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "table": "SalesLT_Customer"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

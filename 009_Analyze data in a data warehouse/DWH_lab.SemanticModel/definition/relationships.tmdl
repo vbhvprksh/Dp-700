@@ -1,0 +1,18 @@
+relationship 6019488b-7346-cd1c-7464-0dd658062113
+	fromColumn: DimDate.DateKey
+	toColumn: FactSalesOrder.SalesOrderKey
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 3a7bc7ca-199d-e052-b547-4f247ed3a0eb
+	fromColumn: FactSalesOrder.CustomerKey
+	toColumn: DimCustomer.CustomerKey
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
+relationship 92fc8e79-13d2-bb9b-b109-0d6cc5ddbf5b
+	fromColumn: FactSalesOrder.ProductKey
+	toColumn: DimProduct.ProductKey
+
+	annotation __RelationshipProperties = {"constraintName":"","needRecreation":false,"isUserCreated":true}
+
