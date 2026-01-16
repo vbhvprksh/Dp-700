@@ -1,12 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "KQLQueryset",
-    "displayName": "test_db_queryset Archived",
-    "description": "test_db_queryset Archived"
+    "type": "Reflex",
+    "displayName": "Activator 2026-01-16 08:24:03"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "12b3fb8d-bf1f-8cf7-4013-976b23a3413d"
+    "logicalId": "485b0e69-18e8-8aa4-4d03-c8f7827b5154"
   }
 }

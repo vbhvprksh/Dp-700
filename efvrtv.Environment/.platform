@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "KQLQueryset",
-    "displayName": "test_db_queryset Archived",
-    "description": "test_db_queryset Archived"
+    "type": "Environment",
+    "displayName": "efvrtv",
+    "description": "Environment"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "12b3fb8d-bf1f-8cf7-4013-976b23a3413d"
+    "logicalId": "ff538d94-4906-a320-40d9-ee467be97938"
   }
 }
