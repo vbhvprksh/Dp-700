@@ -1,5 +1,5 @@
 {
-  "schema_version": 66,
+  "schema_version": 67,
   "tiles": [
     {
       "id": "6ea14483-a1e1-4676-a14e-099fd3a1da22",
@@ -15,6 +15,28 @@
       "queryRef": {
         "kind": "query",
         "queryId": "30e6aaad-7cb7-49a4-beb6-b4a3d2e3b16a"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "edbce88d-67dc-4f43-aa5a-8bd660575af5",
+      "title": "New Tile",
+      "visualType": "table",
+      "pageId": "a7edaeb0-d373-4894-9d5d-3c1e3efb80ec",
+      "layout": {
+        "width": 9,
+        "height": 7,
+        "x": 9,
+        "y": 0
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "6fccab60-57c0-4c97-85b6-7d3b7b653608"
       },
       "visualOptions": {
         "selectedDataOnLoad": {
@@ -52,6 +74,15 @@
       "database": "34ee7c2f-6cbd-a934-409b-20becf6a382e",
       "name": "event_stock_data",
       "workspace": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "0c80b886-db9a-9ea9-4eaa-ad96e201df8d",
+      "name": "test_db",
+      "workspace": "00000000-0000-0000-0000-000000000000",
+      "id": "1c81db9f-63ec-4956-a18e-8b197be6c43a"
     }
   ],
   "pages": [
@@ -68,6 +99,15 @@
       },
       "text": "\n StockTable\n | where [\"time\"] > ago(5m)\n | summarize avgPrice = avg(todecimal(bidPrice)) by symbol\n | project symbol, avgPrice",
       "id": "30e6aaad-7cb7-49a4-beb6-b4a3d2e3b16a",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1c81db9f-63ec-4956-a18e-8b197be6c43a"
+      },
+      "text": "Select * from Yellow_taxi_table\n",
+      "id": "6fccab60-57c0-4c97-85b6-7d3b7b653608",
       "usedVariables": []
     }
   ]
